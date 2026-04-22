@@ -2,6 +2,12 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from time import perf_counter
+from typing import TypedDict
+
+
+class BruteForceSonucu(TypedDict):
+    anahtarlar: list[str]
+    sure_ms: float
 
 
 class S_DES_Tablolar:
@@ -115,7 +121,7 @@ class S_DES_Motoru:
 
 class KabaKuvvet_Saldirisi:
     @staticmethod
-    def anahtar_bul(acik_metin_8bit: str, sifreli_metin_8bit: str) -> dict[str, object]:
+    def anahtar_bul(acik_metin_8bit: str, sifreli_metin_8bit: str) -> BruteForceSonucu:
         _bit_dogrula(acik_metin_8bit, 8, "Açık metin")
         _bit_dogrula(sifreli_metin_8bit, 8, "Şifreli metin")
 

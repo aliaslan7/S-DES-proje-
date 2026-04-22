@@ -21,7 +21,7 @@ class SDESCoreTests(unittest.TestCase):
         sifreli = S_DES_Motoru(gercek_anahtar).sifrele(acik)
         sonuc = KabaKuvvet_Saldirisi.anahtar_bul(acik, sifreli)
         self.assertIn(gercek_anahtar, sonuc["anahtarlar"])
-        self.assertGreaterEqual(1024, len(sonuc["anahtarlar"]))
+        self.assertLessEqual(len(sonuc["anahtarlar"]), 1024)
         self.assertGreaterEqual(sonuc["sure_ms"], 0.0)
 
 
